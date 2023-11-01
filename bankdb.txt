@@ -1,0 +1,23 @@
+create database bank;
+use bank;
+describe emprecord;
+CREATE TABLE customers (
+    cname VARCHAR(30) NOT NULL,
+    accno VARCHAR(8) NOT NULL PRIMARY KEY,
+    phno BIGINT NOT NULL UNIQUE,
+    password VARCHAR(20),
+    balance DECIMAL(10, 2) NOT NULL DEFAULT '0.00',
+    acctype ENUM('Savings', 'Current'),
+    doc DATETIME
+);
+
+CREATE TABLE emprecord (
+    empid VARCHAR(7) NOT NULL PRIMARY KEY,
+    name VARCHAR(30) NOT NULL,
+    username VARCHAR(20) NOT NULL UNIQUE,
+    email VARCHAR(25) NOT NULL UNIQUE,
+    gender ENUM('Male', 'Female'),
+    phno VARCHAR(10) NOT NULL,
+    password VARCHAR(20)
+);
+insert into emprecord values('E12000','adminame','admin','admin@gmail.com','Male','9999999999','password');
