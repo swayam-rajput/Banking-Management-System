@@ -1,6 +1,7 @@
 create database bank;
+
 use bank;
-describe emprecord;
+
 CREATE TABLE customers (
     cname VARCHAR(30) NOT NULL,
     accno VARCHAR(8) NOT NULL PRIMARY KEY,
